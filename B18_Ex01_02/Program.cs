@@ -10,7 +10,71 @@ namespace B18_Ex01_02
     {
         public static void Main()
         {
-            // this is an entry point
+            PrintHourGlass(5);
+            Console.ReadLine();
+        }
+
+        // method is public so i can use it in ex3
+        public static void PrintHourGlass(int i_NumOfLines)
+        {
+            StringBuilder hourglass = new StringBuilder(string.Empty);
+            BuildTop(hourglass, i_NumOfLines);
+            BuildBottom(hourglass, i_NumOfLines);
+
+            Console.WriteLine(hourglass);
+        }
+
+        private static void BuildTop(StringBuilder i_hourglass, int i_NumOfLines)
+        {
+            int row = 0;
+
+            for (int i = i_NumOfLines; i > 0; i -= 2)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    i_hourglass.Append("*");
+                }
+
+                i_hourglass.Append("\n");
+                if (i > 1)
+                {
+                    row++;
+                    for (int k = 0; k < row; k++)
+                    {
+                        i_hourglass.Append(" ");
+                    }
+                }
+                else
+                {
+                    row--;
+                    for (int k = 0; k < row; k++)
+                    {
+                        i_hourglass.Append(" ");
+                    }
+                }
+            }
+        }
+
+        private static void BuildBottom(StringBuilder i_HourGlass, int i_NumOfLines)
+        {
+            int row = (i_NumOfLines - 3) / 2;
+            for (int i = 3; i <= i_NumOfLines; i += 2)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    i_HourGlass.Append("*");
+                }
+
+                i_HourGlass.Append("\n");
+                row--;
+                if (i <= i_NumOfLines)
+                {
+                    for (int k = 0; k < row; k++)
+                    {
+                        i_HourGlass.Append(" ");
+                    }
+                }
+            }
         }
     }
 }
