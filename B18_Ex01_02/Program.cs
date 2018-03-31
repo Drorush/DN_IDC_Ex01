@@ -35,7 +35,7 @@ namespace B18_Ex01_02
                     i_hourglass.Append("*");
                 }
 
-                i_hourglass.Append("\n");
+                i_hourglass.Append(Environment.NewLine);
                 if (i > 1)
                 {
                     row++;
@@ -65,7 +65,7 @@ namespace B18_Ex01_02
                     i_HourGlass.Append("*");
                 }
 
-                i_HourGlass.Append("\n");
+                i_HourGlass.Append(Environment.NewLine);
                 row--;
                 if (i <= i_NumOfLines)
                 {
