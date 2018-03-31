@@ -12,21 +12,21 @@ namespace B18_Ex01_04
         {
             int num;
 
-            string input = GetInput();
-            CheckIfPalindrome(input);
+            string input = getInput();
+            checkIfPalindrome(input);
             if (int.TryParse(input, out num))
             {
-                IsEven(num);
+                isEven(num);
             }
             else
             {
-                LowerCaseCounter(input);
+                lowerCaseCounter(input);
             }
 
             Console.ReadLine();
         }
 
-        private static void LowerCaseCounter(string i_input)
+        private static void lowerCaseCounter(string i_input)
         {
             int count = 0;
 
@@ -41,7 +41,7 @@ namespace B18_Ex01_04
             Console.WriteLine("The string contains " + count + " lower case letters");
         }
 
-        private static void IsEven(int i_num)
+        private static void isEven(int i_num)
         {
             if (i_num % 2 == 0)
             {
@@ -53,9 +53,9 @@ namespace B18_Ex01_04
             }
         }
 
-        private static void CheckIfPalindrome(string i_input)
+        private static void checkIfPalindrome(string i_input)
         {
-            if (IsPalindrome(i_input))
+            if (isPalindrome(i_input))
             { 
                 Console.WriteLine("the string is palindrome");
             }
@@ -65,7 +65,7 @@ namespace B18_Ex01_04
             }
         }
 
-        private static Boolean IsPalindrome(string i_input)
+        private static Boolean isPalindrome(string i_input)
         {
             bool isPalindrome = true;
             int startIndex = 0;
@@ -81,16 +81,16 @@ namespace B18_Ex01_04
             return isPalindrome;
         }
 
-        private static string GetInput()
+        private static string getInput()
         {
-            bool isLegal = false;
+            bool isLegalInput = false;
             string input = string.Empty;
             Console.WriteLine("Please enter a string of length 8 (contains only letters or numbers) and then press enter");
-            while (!isLegal)
+            while (!isLegalInput)
             {
                 input = Console.ReadLine();
-                isLegal = IsLegal(input);
-                if (!isLegal)
+                isLegalInput = isLegal(input);
+                if (!isLegalInput)
                 {
                     Console.WriteLine("Your input is illegal, please try again");
                 }
@@ -99,7 +99,7 @@ namespace B18_Ex01_04
             return input;
         }
 
-        private static Boolean IsLegal(string i_input)
+        private static Boolean isLegal(string i_input)
         {
             bool isLegalLength = i_input.Length == 8;
             bool isNumeric = int.TryParse(i_input, out int n);

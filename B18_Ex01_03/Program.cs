@@ -10,12 +10,12 @@ namespace B18_Ex01_03
     {
         public static void Main()
         {
-            int numOfLines = GetNumOfLines();
+            int numOfLines = getNumOfLines();
             B18_Ex01_02.Program.PrintHourGlass(numOfLines);
             Console.ReadLine();
         }
 
-        private static int GetNumOfLines()
+        private static int getNumOfLines()
         {
             int numOfLines;
 

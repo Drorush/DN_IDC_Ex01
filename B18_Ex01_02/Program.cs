@@ -18,13 +18,13 @@ namespace B18_Ex01_02
         public static void PrintHourGlass(int i_NumOfLines)
         {
             StringBuilder hourglass = new StringBuilder(string.Empty);
-            BuildTop(hourglass, i_NumOfLines);
-            BuildBottom(hourglass, i_NumOfLines);
+            buildTop(hourglass, i_NumOfLines);
+            buildBottom(hourglass, i_NumOfLines);
 
             Console.WriteLine(hourglass);
         }
 
-        private static void BuildTop(StringBuilder i_hourglass, int i_NumOfLines)
+        private static void buildTop(StringBuilder i_hourglass, int i_NumOfLines)
         {
             int row = 0;
 
@@ -55,7 +55,7 @@ namespace B18_Ex01_02
             }
         }
 
-        private static void BuildBottom(StringBuilder i_HourGlass, int i_NumOfLines)
+        private static void buildBottom(StringBuilder i_HourGlass, int i_NumOfLines)
         {
             int row = (i_NumOfLines - 3) / 2;
             for (int i = 3; i <= i_NumOfLines; i += 2)

@@ -10,14 +10,14 @@ namespace B18_Ex01_05
     {
         public static void Main()
         {
-            int input = GetPositiveIntegerFromUser();
-            GetMaxAndMinDigits(input);
-            CountEvens(input);
-            CountDigitsLowerThanOnesDigit(input);
+            int input = getPositiveIntegerFromUser();
+            getMaxAndMinDigits(input);
+            countEvens(input);
+            countDigitsLowerThanOnesDigit(input);
             Console.ReadLine();
         }
 
-        private static void CountDigitsLowerThanOnesDigit(int i_num)
+        private static void countDigitsLowerThanOnesDigit(int i_num)
         {
             int count = 0;
             int onesDigit = i_num % 10;
@@ -36,7 +36,7 @@ namespace B18_Ex01_05
             Console.WriteLine(count + " Of the numbers are lower than the ones digit");
         }
 
-        private static int GetMin(int i_num)
+        private static int getMin(int i_num)
         {
             int minDigit = int.MaxValue;
             int singleDigit = 0;
@@ -56,7 +56,7 @@ namespace B18_Ex01_05
             return minDigit;
         }
 
-        private static void CountEvens(int i_num)
+        private static void countEvens(int i_num)
         {
             int count = 0;
 
@@ -73,7 +73,7 @@ namespace B18_Ex01_05
             Console.WriteLine(count + " Of the digits are even");
         }
 
-        private static void GetMaxAndMinDigits(int i_num)
+        private static void getMaxAndMinDigits(int i_num)
         {
             int maxDigit = int.MinValue;
             int originalNum = i_num;
@@ -91,12 +91,12 @@ namespace B18_Ex01_05
                 i_num /= 10;
             }
 
-            minDigit = GetMin(originalNum);
+            minDigit = getMin(originalNum);
             Console.WriteLine("The maximum digit is " + maxDigit);
             Console.WriteLine("The minimum digit is " + minDigit);
         }
 
-        private static int GetPositiveIntegerFromUser()
+        private static int getPositiveIntegerFromUser()
         {
             bool isLegal = false;
             string input;

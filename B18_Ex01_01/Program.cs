@@ -10,17 +10,17 @@ namespace B18_Ex01_01
     {
         public static void Main()
         {
-            int[] binaryNumbers = GetThreeBinaryNumbers();
-            int[] decimalNumbers = ConvertBinaryArrayToDecimal(binaryNumbers);
-            PrintNumbers(decimalNumbers);
-            AvgNumOfOnesAndZeros(NumOfOnes(binaryNumbers));
-            PowerOfTwo(NumOfOnes(binaryNumbers));
-            NumOfStrictlyDecreasing(decimalNumbers);
-            PrintAvg(decimalNumbers);
+            int[] binaryNumbers = getThreeBinaryNumbers();
+            int[] decimalNumbers = convertBinaryArrayToDecimal(binaryNumbers);
+            printNumbers(decimalNumbers);
+            avgNumOfOnesAndZeros(numOfOnes(binaryNumbers));
+            powerOfTwo(numOfOnes(binaryNumbers));
+            numOfStrictlyDecreasing(decimalNumbers);
+            printAvg(decimalNumbers);
             Console.ReadLine();
         }
 
-        private static void AvgNumOfOnesAndZeros(int[] i_NumOfOnes)
+        private static void avgNumOfOnesAndZeros(int[] i_NumOfOnes)
         {
             int[] numOfOnesAndZeros = new int[2];
 
@@ -36,7 +36,7 @@ namespace B18_Ex01_01
             Console.WriteLine(output);
         }
 
-        private static void PrintAvg(int[] i_Numbers)
+        private static void printAvg(int[] i_Numbers)
         {
             float sum = 0;
             float avg;
@@ -51,13 +51,13 @@ namespace B18_Ex01_01
         }
 
         // note: i assume that a one digit number is a strictly decreasing number.
-        private static void NumOfStrictlyDecreasing(int[] i_Numbers)
+        private static void numOfStrictlyDecreasing(int[] i_Numbers)
         {
             int numOfStrictlyDecreasing = 0;
 
             for (int i = 0; i < i_Numbers.Length; i++)
             {
-                if (IsStrictlyDecreasing(i_Numbers[i]))
+                if (isStrictlyDecreasing(i_Numbers[i]))
                 {
                     numOfStrictlyDecreasing++;
                 }
@@ -66,7 +66,7 @@ namespace B18_Ex01_01
             Console.WriteLine(numOfStrictlyDecreasing + " Of the numbers are strictly decreasing");
         }
 
-        private static Boolean IsStrictlyDecreasing(int i_num)
+        private static Boolean isStrictlyDecreasing(int i_num)
         {
             bool strictlyDecreasing = true;
             int firstNum, secondNum;
@@ -84,7 +84,7 @@ namespace B18_Ex01_01
             return strictlyDecreasing;
         }
 
-        private static void PowerOfTwo(int[] i_numOfOnes)
+        private static void powerOfTwo(int[] i_numOfOnes)
         {
             int countOnes = 0;
 
@@ -99,19 +99,19 @@ namespace B18_Ex01_01
             Console.WriteLine(countOnes + " Of the numbers are power of two");
         }
 
-        private static int[] NumOfOnes(int[] i_binaryNumbers)
+        private static int[] numOfOnes(int[] i_binaryNumbers)
         {
             int[] numOfOnes = new int[i_binaryNumbers.Length];
 
             for (int i = 0; i < numOfOnes.Length; i++)
             {
-                numOfOnes[i] = CountOnes(i_binaryNumbers[i]);
+                numOfOnes[i] = countOnes(i_binaryNumbers[i]);
             }
 
             return numOfOnes;
         }
 
-        private static int CountOnes(int i_num)
+        private static int countOnes(int i_num)
         {
             int i = 0;
             int numOfOnes = 0;
@@ -130,7 +130,7 @@ namespace B18_Ex01_01
             return numOfOnes;
         }
 
-        private static void PrintNumbers(int[] i_Numbers)
+        private static void printNumbers(int[] i_Numbers)
         {
             Console.WriteLine("The numbers are:");
             for (int i = 0; i < i_Numbers.Length; i++)
@@ -139,19 +139,19 @@ namespace B18_Ex01_01
             }
         }
 
-        private static int[] ConvertBinaryArrayToDecimal(int[] i_BinaryNumbers)
+        private static int[] convertBinaryArrayToDecimal(int[] i_BinaryNumbers)
         {
             int[] decimals = new int[i_BinaryNumbers.Length];
 
             for (int i = 0; i < i_BinaryNumbers.Length; i++)
             {
-                decimals[i] = BinaryToDecimal(i_BinaryNumbers[i]);
+                decimals[i] = binaryToDecimal(i_BinaryNumbers[i]);
             }
 
             return decimals;
         }
 
-        private static int BinaryToDecimal(int i_BinaryNumber)
+        private static int binaryToDecimal(int i_BinaryNumber)
         {
             int decimalNumber = 0;
             int remainder = 0;
@@ -168,7 +168,7 @@ namespace B18_Ex01_01
             return decimalNumber;
         }
 
-        private static int[] GetThreeBinaryNumbers()
+        private static int[] getThreeBinaryNumbers()
         {
             int[] binaryNumbers = new int[3];
             int numOfLegalInputs = 0;
@@ -178,7 +178,7 @@ namespace B18_Ex01_01
             {
                 Console.WriteLine("Please enter 9 digits binary number (and then press enter)");
                 input = Console.ReadLine();
-                if (IsLegalInput(input))
+                if (isLegalInput(input))
                 {
                     binaryNumbers[numOfLegalInputs] = int.Parse(input);
                     numOfLegalInputs++;
@@ -192,7 +192,7 @@ namespace B18_Ex01_01
             return binaryNumbers;
         }
 
-        private static bool IsLegalInput(string i_Input)
+        private static bool isLegalInput(string i_Input)
         {
             bool isLegalInput = i_Input.Length == 9;
             int i = 0;
