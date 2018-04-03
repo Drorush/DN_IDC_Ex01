@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B18_Ex01_04", "B18_Ex01_04\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B18_Ex01_05", "B18_Ex01_05\B18_Ex01_05.csproj", "{A0585B51-B079-4F5B-A36F-95C43B686330}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7BC9B587-F091-4B62-9FAC-AF8CF205EE8C}"
+	ProjectSection(SolutionItems) = preProject
+		B18_Ex01_CheckingReport.txt = B18_Ex01_CheckingReport.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
